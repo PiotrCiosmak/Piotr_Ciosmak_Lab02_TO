@@ -38,12 +38,13 @@ public class Extractor
         boolean stayInTheWhileLoop = true;
         while (stayInTheWhileLoop)
         {
+            //TODO sprawdzac czy len nie jest == 0 jestli jest to wpisac brak pomiaru
             tmpData = extractFromDataLine(' ');
             if (tmpData.charAt(0) == '6')
             {
                 totalPrecipitation = tmpData;
             }
-            else if (tmpData.charAt(0) == '7')
+            else if (tmpData.charAt(0) == '7')//Uważać na to ze albo są dwie liczby i // albo // i dwie liczby
             {
                 presentAndPastWeatherCondition = tmpData;
             }
