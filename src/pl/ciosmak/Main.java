@@ -37,6 +37,7 @@ public class Main
             listOfSection.add(new AirTemperature(extractor.getAirTemperature()));
             listOfSection.add(new DewPointTemperature(extractor.getDewPointTemperature()));
             listOfSection.add(new AtmosphericPressureAtTheStationLevel(extractor.getAtmosphericPressureAtTheStationLevel()));
+            listOfSection.add(new AtmosphericPressureAtSeaLevel(extractor.getAtmosphericPressureAtSeaLevel()));
         }
 
         for (var element : listOfSection)
