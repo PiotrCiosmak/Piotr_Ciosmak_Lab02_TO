@@ -7,7 +7,7 @@ public class AirTemperature extends Section
     public AirTemperature(final String parameters)
     {
         int tmpTemperatureValueIndicator = Character.getNumericValue(parameters.charAt(1));
-        if (tmpTemperatureValueIndicator == 1)
+        if (tmpTemperatureValueIndicator == 0)
         {
             temperatureValueIndicator = "dodatnia";
         }
