@@ -39,8 +39,7 @@ public class AmountOfGeneralCloudCoverAndWindData extends Section
             }
         }
 
-        String tmpAverageWindSpeedExpressedInKnotsFrom10Minutes = parameters.substring(3, 5);
-        averageWindSpeedExpressedInKnotsFrom10Minutes = tmpAverageWindSpeedExpressedInKnotsFrom10Minutes;
+        averageWindSpeedExpressedInKnotsFrom10Minutes = parameters.substring(3, 5);
     }
 
     @Override
