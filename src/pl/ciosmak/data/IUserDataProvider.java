@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface IUserDataProvider
 {
-    public void initialize();
+    void initialize();
 
-    public ArrayList<String> prepareDate();
+    ArrayList<String> prepareDate();
 }
