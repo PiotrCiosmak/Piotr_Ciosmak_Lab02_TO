@@ -16,16 +16,16 @@ public class AirTemperature extends Section
             temperatureValueIndicator = "ujemna";
         }
 
-        airTemperatureInTenthsOfDegreesCelsiusWithoutCommas = Integer.parseInt(parameters.substring(2, 4)) + "," + parameters.charAt(4);
+        airTemperatureInDegreesCelsius = Integer.parseInt(parameters.substring(2, 4)) + "," + parameters.charAt(4);
     }
 
     @Override
     public void show()
     {
         System.out.println("Wskaźnik wartości temperatury: " + temperatureValueIndicator);
-        System.out.println("Temperatura powietrza w stopniach Celsjusza: " + airTemperatureInTenthsOfDegreesCelsiusWithoutCommas);
+        System.out.println("Temperatura powietrza w stopniach Celsjusza: " + airTemperatureInDegreesCelsius);
     }
 
     private final String temperatureValueIndicator;
-    private final String airTemperatureInTenthsOfDegreesCelsiusWithoutCommas;
+    private final String airTemperatureInDegreesCelsius;
 }
