@@ -4,6 +4,7 @@ import pl.ciosmak.data.RemoteDataProvider;
 import pl.ciosmak.extractor.Extractor;
 import pl.ciosmak.sections.LoadDataFromFile;
 import pl.ciosmak.sections.Section;
+import pl.ciosmak.sections.sectionOne.AirTemperature;
 import pl.ciosmak.sections.sectionOne.AmountOfGeneralCloudCoverAndWindData;
 import pl.ciosmak.sections.sectionOne.PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility;
 import pl.ciosmak.sections.sectionZero.Date;
@@ -35,6 +36,7 @@ public class Main
             listOfSection.add(new WindIndex(extractor.getTimeOfObservationAndWindIndex()));
             listOfSection.add(new PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility(extractor.getPrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility()));
             listOfSection.add(new AmountOfGeneralCloudCoverAndWindData(extractor.getAmountOfGeneralCloudCoverAndWindData()));
+            listOfSection.add(new AirTemperature(extractor.getAirTemperature()));
         }
 
         for (var element : listOfSection)
