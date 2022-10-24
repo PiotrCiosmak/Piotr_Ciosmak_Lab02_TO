@@ -6,8 +6,8 @@ public class WindIndex extends Section
 {
     public WindIndex(final String parameters)
     {
-        char tmp = parameters.charAt(4);
-        switch (tmp)
+        char tmpWindIndex = parameters.charAt(4);
+        switch (tmpWindIndex)
         {
             case '0' -> windIndex = "prędkość wiatru oszacowano w m/s";
             case '1' -> windIndex = "prędkość wiatru zmierzono anemometrem w m/s";
