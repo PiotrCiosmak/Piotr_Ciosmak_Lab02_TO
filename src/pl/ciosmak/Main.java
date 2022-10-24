@@ -44,6 +44,10 @@ public class Main
         for (var element : listOfSection)
         {
             //TODO ładniej to wyświetlić id identyfikator stacji to jakis dekrator
+            if(element.getClass().getSimpleName().equals("StationID"))
+            {
+                System.out.println("\n---POMIAR---");
+            }
             element.show();
         }
     }
