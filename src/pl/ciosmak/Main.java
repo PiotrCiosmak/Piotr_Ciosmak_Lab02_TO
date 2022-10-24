@@ -38,11 +38,12 @@ public class Main
             listOfSection.add(new DewPointTemperature(extractor.getDewPointTemperature()));
             listOfSection.add(new AtmosphericPressureAtTheStationLevel(extractor.getAtmosphericPressureAtTheStationLevel()));
             listOfSection.add(new AtmosphericPressureAtSeaLevel(extractor.getAtmosphericPressureAtSeaLevel()));
+            listOfSection.add(new TendencyOfAtmosphericPressure(extractor.getTendencyOfAtmosphericPressure()));
         }
 
         for (var element : listOfSection)
         {
-            //TODO ładniej to wyświetlić
+            //TODO ładniej to wyświetlić id identyfikator stacji to jakis dekrator
             element.show();
         }
     }
