@@ -9,7 +9,7 @@ public class AtmosphericPressureAtTheStationLevel extends Section
         double tmpAtmosphericPressureAtTheStationLevel = Double.parseDouble(parameters.substring(1));
         if (tmpAtmosphericPressureAtTheStationLevel < 1000)
         {
-            tmpAtmosphericPressureAtTheStationLevel += 1000;
+            tmpAtmosphericPressureAtTheStationLevel += 10000;
         }
         tmpAtmosphericPressureAtTheStationLevel /= 10;
         atmosphericPressureAtTheStationLevel = replacePeriodWithComma(new StringBuilder(Double.toString(tmpAtmosphericPressureAtTheStationLevel)));
