@@ -9,7 +9,6 @@ public class AmountOfGeneralCloudCoverAndWindData extends Section
 {
     public AmountOfGeneralCloudCoverAndWindData(final String parameters)
     {
-        loadTablesFromFile();//TODO usunac
         char tmpAmountOfGeneralCloudiness = parameters.charAt(0);
         switch (tmpAmountOfGeneralCloudiness)
         {
@@ -51,8 +50,7 @@ public class AmountOfGeneralCloudCoverAndWindData extends Section
 
     }
 
-    //TODO wrzucic do jakiejs funkcji która wczyta to i inne podobne odrazu po starcie programu
-    private static void loadTablesFromFile()
+    public static void loadTablesFromFile()
     {
         tableOfAverageWindDirectionFrom10Minutes = new ArrayList<>();
         tableOfAverageWindDirectionFrom10Minutes = FileDataProvider.readFromInputStream("files/averageWindDirectionFrom10Minutes.txt");
