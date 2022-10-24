@@ -165,21 +165,20 @@ public class Extractor
         {
             return "End of string";
         }
-
         return dataLine.substring(leftSplitIndex, rightSplitIndex);
     }
 
-    private String dataLine;
+    private final String dataLine;
     private int leftSplitIndex;
     private int rightSplitIndex;
 
-    private String stationID;
-    private String year;
-    private String month;
-    private String day;
-    private String hour;
-    private String minute;
-    private String stationTypeID;
+    private final String stationID;
+    private final String year;
+    private final String month;
+    private final String day;
+    private final String hour;
+    private final String minute;
+    private final String stationTypeID;
     private String timeOfObservationAndWindIndex;
     private String precipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility;
     private String amountOfGeneralCloudCoverAndWindData;
