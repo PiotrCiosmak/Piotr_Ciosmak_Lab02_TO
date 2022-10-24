@@ -5,10 +5,9 @@ import java.util.Arrays;
 
 public class DataProvider
 {
-    public static ArrayList<String> splitData(String data)
+    public static ArrayList<String> splitData(final String data)
     {
         String[] tmpListOfLines = data.split("\n");
-        ArrayList<String> listOfLines = new ArrayList<String>(Arrays.asList(tmpListOfLines));
-        return listOfLines;
+        return new ArrayList<>(Arrays.asList(tmpListOfLines));
     }
 }
