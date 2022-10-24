@@ -24,7 +24,7 @@ public class RemoteDataProvider implements IRemoteDataProvider
         }
         catch (IOException | InterruptedException e)
         {
-            System.err.print("Błąd podczas pobierania danych ze strony internetowej.\nOpuszczanie programu.");
+            System.err.println("Błąd podczas pobierania danych ze strony internetowej.\nOpuszczanie programu.");
             System.exit(1);
         }
     }
