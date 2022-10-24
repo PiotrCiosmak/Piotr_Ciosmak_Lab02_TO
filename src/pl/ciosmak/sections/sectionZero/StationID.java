@@ -4,7 +4,7 @@ import pl.ciosmak.sections.Section;
 
 public class StationID extends Section
 {
-    public StationID(String parameters)
+    public StationID(final String parameters)
     {
         stationID = parameters;
     }
@@ -15,5 +15,5 @@ public class StationID extends Section
         System.out.println("Identyfikator stacji: " + stationID);
     }
 
-    private String stationID;
+    private final String stationID;
 }
