@@ -3,6 +3,7 @@ package pl.ciosmak;
 import pl.ciosmak.data.RemoteDataProvider;
 import pl.ciosmak.extractor.Extractor;
 import pl.ciosmak.sections.Section;
+import pl.ciosmak.sections.sectionOne.AmountOfGeneralCloudCoverAndWindData;
 import pl.ciosmak.sections.sectionOne.PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility;
 import pl.ciosmak.sections.sectionZero.Date;
 import pl.ciosmak.sections.sectionZero.StationID;
@@ -31,6 +32,12 @@ public class Main
             listOfSection.add(new StationTypeID(extractor.getStationTypeID()));
             listOfSection.add(new WindIndex(extractor.getTimeOfObservationAndWindIndex()));
             listOfSection.add(new PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility(extractor.getPrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility()));
+            listOfSection.add(new AmountOfGeneralCloudCoverAndWindData(extractor.getAmountOfGeneralCloudCoverAndWindData()));
+        }
+
+        for (var element : listOfSection)
+        {
+            element.show();
         }
     }
 }
