@@ -15,10 +15,9 @@ public class Date implements IDate
     }
 
     @Override
-    public void initialize(String label)
+    public void initialize(final String label)
     {
-        label.toUpperCase();
-        System.out.println(label);
+        System.out.println(label.toUpperCase());
 
         try
         {
@@ -27,8 +26,7 @@ public class Date implements IDate
         }
         catch (Exception ex)
         {
-            System.out.println("Wprowadzono błędny dzień!!!");
-            initialize(label);
+            incorrectDataEntered("dzień");
         }
 
 
@@ -39,8 +37,7 @@ public class Date implements IDate
         }
         catch (Exception ex)
         {
-            System.out.println("Wprowadzono błędny miesiąc!!!");
-            initialize(label);
+            incorrectDataEntered("miesiąc");
         }
 
         try
@@ -50,8 +47,7 @@ public class Date implements IDate
         }
         catch (Exception ex)
         {
-            System.out.println("Wprowadzono błędny rok!!!");
-            initialize(label);
+            incorrectDataEntered("rok");
         }
 
         try
@@ -61,8 +57,7 @@ public class Date implements IDate
         }
         catch (Exception ex)
         {
-            System.out.println("Wprowadzono błędną godzinę!!!");
-            initialize(label);
+            incorrectDataEntered("godzinę");
         }
 
         try
@@ -72,11 +67,12 @@ public class Date implements IDate
         }
         catch (Exception ex)
         {
-            System.out.println("Wprowadzono błędną minutę!!!");
-            initialize(label);
+            incorrectDataEntered("minutę");
+
         }
         if (!checkDate())
         {
+            System.err.println("Wprowadzona błędną datę.");
             initialize(label);
         }
     }
@@ -106,14 +102,34 @@ public class Date implements IDate
         return minute;
     }
 
+    private void incorrectDataEntered(final String label)
+    {
+        System.err.println("Wprowadzono błędny " + label.toLowerCase() + ".");
+        scanner = new Scanner(System.in);
+        initialize(label);
+    }
+
     private boolean checkDate()
     {
-        if (year < 1900 || year > Calendar.getInstance().get(Calendar.YEAR))
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        int currentDay = Calendar.getInstance().get(Calendar.DATE);
+        if (year < currentYear - 1 || year > currentYear)
         {
             return false;
         }
 
         if (month < 1 || month > 12)
+        {
+            return false;
+        }
+
+        if (year == currentYear && month > currentMonth)
+        {
+            return false;
+        }
+
+        if (year == currentYear - 1 && month < currentMonth)
         {
             return false;
         }
@@ -166,6 +182,16 @@ public class Date implements IDate
                 break;
         }
 
+        if (year == currentYear && month == currentYear && day > currentDay)
+        {
+            return false;
+        }
+
+        if (year == currentYear - 1 && month == currentMonth && day < currentDay)
+        {
+            return false;
+        }
+
         if (hour < 0 || hour > 24)
         {
             return false;
@@ -177,7 +203,7 @@ public class Date implements IDate
         return true;
     }
 
-    private final Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
     private int day;
     private int month;
     private int year;
