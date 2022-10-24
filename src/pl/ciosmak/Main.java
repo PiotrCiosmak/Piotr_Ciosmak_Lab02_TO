@@ -2,6 +2,7 @@ package pl.ciosmak;
 
 import pl.ciosmak.data.RemoteDataProvider;
 import pl.ciosmak.extractor.Extractor;
+import pl.ciosmak.sections.LoadDataFromFile;
 import pl.ciosmak.sections.Section;
 import pl.ciosmak.sections.sectionOne.AmountOfGeneralCloudCoverAndWindData;
 import pl.ciosmak.sections.sectionOne.PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility;
@@ -21,6 +22,7 @@ public class Main
         RemoteDataProvider remoteDataProvider = new RemoteDataProvider();
         remoteDataProvider.initialize();
         ArrayList<String> linesOfData = splitData(remoteDataProvider.getData());
+        LoadDataFromFile.load();
         ArrayList<Section> listOfSection = new ArrayList<>();
         for (var line : linesOfData)
         {
@@ -37,6 +39,7 @@ public class Main
 
         for (var element : listOfSection)
         {
+            //TODO ładniej to wyświetlić
             element.show();
         }
     }
