@@ -9,7 +9,6 @@ public class PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility ex
 {
     public PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility(final String parameters)
     {
-        loadTablesFromFile();//TODO usunac
         char tmpPrecipitationGroupIndex = parameters.charAt(0);
         switch (tmpPrecipitationGroupIndex)
         {
@@ -74,8 +73,7 @@ public class PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility ex
         System.out.println("Widzialność w kierunku poziomym na " + measurementMadeOn + ": " + visibilityInTheHorizontalDirection + " km");
     }
 
-    //TODO wrzucic do jakiejs funkcji która wczyta to i inne podobne odrazu po starcie programu
-    private static void loadTablesFromFile()
+    public static void loadTablesFromFile()
     {
         tableOfVisibilityInTheHorizontalDirection = new ArrayList<>();
         tableOfVisibilityInTheHorizontalDirection = FileDataProvider.readFromInputStream("files/visibilityInTheHorizontalDirection.txt");
