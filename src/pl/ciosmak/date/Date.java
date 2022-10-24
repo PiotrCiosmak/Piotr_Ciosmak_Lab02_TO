@@ -21,7 +21,7 @@ public class Date implements IDate
 
         try
         {
-            System.out.println("Podaj dzień:");
+            System.out.print("Podaj dzień:");
             day = scanner.nextInt();
         }
         catch (Exception ex)
@@ -32,7 +32,7 @@ public class Date implements IDate
 
         try
         {
-            System.out.println("Podaj miesiąc:");
+            System.out.print("Podaj miesiąc:");
             month = scanner.nextInt();
         }
         catch (Exception ex)
@@ -42,7 +42,7 @@ public class Date implements IDate
 
         try
         {
-            System.out.println("Podaj rok:");
+            System.out.print("Podaj rok:");
             year = scanner.nextInt();
         }
         catch (Exception ex)
@@ -52,7 +52,7 @@ public class Date implements IDate
 
         try
         {
-            System.out.println("Podaj godzine:");
+            System.out.print("Podaj godzine:");
             hour = scanner.nextInt();
         }
         catch (Exception ex)
@@ -62,7 +62,7 @@ public class Date implements IDate
 
         try
         {
-            System.out.println("Podaj minute:");
+            System.out.print("Podaj minute:");
             minute = scanner.nextInt();
         }
         catch (Exception ex)
