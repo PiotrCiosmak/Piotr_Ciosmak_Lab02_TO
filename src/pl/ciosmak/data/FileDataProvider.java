@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class FileDataProvider
 {
-    //dodać interfejs
+    //TODO dodać interfejs
     public static ArrayList<ArrayList<String>> readFromInputStream(String pathToFile)
     {
         var table = new ArrayList<ArrayList<String>>();
