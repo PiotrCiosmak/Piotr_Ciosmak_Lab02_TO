@@ -4,25 +4,16 @@ import pl.ciosmak.sections.Section;
 
 public class WindIndex extends Section
 {
-    public WindIndex(String parametrs)
+    public WindIndex(final String parameters)
     {
-        char tmp = parametrs.charAt(4);
+        char tmp = parameters.charAt(4);
         switch (tmp)
         {
-            case '0':
-                windIndex = "predkosc wiatru oszacowano w m/s";
-                break;
-            case '1':
-                windIndex = "predkosc wiatru zmierzono anemometrem w m/s";
-                break;
-            case '3':
-                windIndex = "predkosc wiatru oszacowano w wezłach";
-                break;
-            case '4':
-                windIndex = "predkosc wiatru zmierzono anemometrem w wezłach";
-                break;
-            default:
-                windIndex = "BLEDNE";
+            case '0' -> windIndex = "prędkość wiatru oszacowano w m/s";
+            case '1' -> windIndex = "prędkość wiatru zmierzono anemometrem w m/s";
+            case '3' -> windIndex = "prędkość wiatru oszacowano w węzłach";
+            case '4' -> windIndex = "prędkość wiatru zmierzono anemometrem w węzłach";
+            default -> windIndex = "BLĄD PRZY WCZYTYWANIU";
         }
     }
 
@@ -32,5 +23,5 @@ public class WindIndex extends Section
         System.out.println("Wskaznik wiatru: " + windIndex);
     }
 
-    private String windIndex;
+    private final String windIndex;
 }
