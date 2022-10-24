@@ -1,7 +1,5 @@
 package pl.ciosmak.data;
 
-import pl.ciosmak.date.Date;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -11,10 +9,6 @@ import java.util.ArrayList;
 
 public class RemoteDataProvider implements IRemoteDataProvider
 {
-    public RemoteDataProvider()
-    {
-    }
-
     @Override
     public void initialize()
     {
@@ -30,7 +24,8 @@ public class RemoteDataProvider implements IRemoteDataProvider
         }
         catch (IOException | InterruptedException e)
         {
-            throw new RuntimeException(e);
+            System.err.print("Błąd podczas pobierania danych ze strony internetowej.\nOpuszczanie programu.");
+            System.exit(1);
         }
     }
 

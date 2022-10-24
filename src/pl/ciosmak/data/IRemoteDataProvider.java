@@ -2,7 +2,7 @@ package pl.ciosmak.data;
 
 public interface IRemoteDataProvider
 {
-    public void initialize();
+    void initialize();
 
-    public String getData();
+    String getData();
 }
