@@ -18,7 +18,7 @@ public class AtmosphericPressureAtTheStationLevel extends Section
     @Override
     public void show()
     {
-        System.out.println("Ciśnienie atmosferyczne na poziomie stacji: " + atmosphericPressureAtTheStationLevel);
+        System.out.println("Ciśnienie atmosferyczne na poziomie stacji: " + atmosphericPressureAtTheStationLevel + " hPa");
     }
 
     private String replacePeriodWithComma(StringBuilder text)

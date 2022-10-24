@@ -18,7 +18,7 @@ public class AtmosphericPressureAtSeaLevel extends Section
     @Override
     public void show()
     {
-        System.out.println("Ciśnienie atmosferyczne na poziomie stacji: " + atmosphericPressureAtSeaLevel);
+        System.out.println("Ciśnienie atmosferyczne na poziomie stacji: " + atmosphericPressureAtSeaLevel + " hPa");
     }
 
     private final String atmosphericPressureAtSeaLevel;
