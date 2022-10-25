@@ -34,6 +34,11 @@ public class Extractor
         atmosphericPressureAtSeaLevel = extractFromDataLine(' ');
         tendencyOfAtmosphericPressure = extractFromDataLine(' ');
 
+
+        rainfall = "";
+        presentAndPastWeatherCondition = "";
+        clouds = "";
+        currentObservationTimeWhenActualObservationTimeDiffersMoreThanTenMinutesFromStandardGGTimeInSectionZero = "";
         String tmpData;
         boolean stayInTheWhileLoop = true;
         while (stayInTheWhileLoop)
