@@ -101,9 +101,7 @@ public class PresentAndPastWeatherCondition extends Section
     public void show()
     {
         if (!checkIfVariablesAreNotEmpty())
-        {
             return;
-        }
         System.out.println("Pogoda bieżąca: " + presentWeather);
         System.out.println("Pogoda ubiegla: " + pastWeather);
     }

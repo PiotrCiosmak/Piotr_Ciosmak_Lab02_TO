@@ -13,6 +13,5 @@ public class LoadDataFromFile
         AmountOfGeneralCloudCoverAndWindData.loadTablesFromFile();
         PresentAndPastWeatherCondition.loadTablesFromFile();
         Clouds.loadTablesFromFile();
-        //dopisac reszte klas które korzystaja z plików z files
     }
 }

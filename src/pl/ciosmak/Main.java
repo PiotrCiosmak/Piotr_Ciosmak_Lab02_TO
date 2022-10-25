@@ -2,7 +2,6 @@ package pl.ciosmak;
 
 import pl.ciosmak.data.RemoteDataProvider;
 import pl.ciosmak.extractor.Extractor;
-import pl.ciosmak.sections.sectionOne.CurrentObservationTimeWhenActualObservationTimeDiffersMoreThanTenMinutesFromStandardGGTimeInSectionZero;
 import pl.ciosmak.sections.LoadDataFromFile;
 import pl.ciosmak.sections.Section;
 import pl.ciosmak.sections.sectionOne.*;

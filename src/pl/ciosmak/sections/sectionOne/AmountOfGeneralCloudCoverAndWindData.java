@@ -21,10 +21,8 @@ public class AmountOfGeneralCloudCoverAndWindData extends Section
             case '6' -> amountOfGeneralCloudiness = "6/8";
             case '7' -> amountOfGeneralCloudiness = "7/8";
             case '8' -> amountOfGeneralCloudiness = "8/8";
-            case '9' ->
-                    amountOfGeneralCloudiness = "niebo niewidoczne (zasłonięte mgłą lub innymi zjawiskami meteorologicznymi)";
-            case '/' ->
-                    amountOfGeneralCloudiness = "chmury niewidoczne z powodów innych niż mgła czy inne zjawiska meteorologiczne lub nie prowadzi się obserwacji";
+            case '9' -> amountOfGeneralCloudiness = "niebo niewidoczne (zasłonięte mgłą lub innymi zjawiskami meteorologicznymi)";
+            case '/' -> amountOfGeneralCloudiness = "chmury niewidoczne z powodów innych niż mgła czy inne zjawiska meteorologiczne lub nie prowadzi się obserwacji";
             default -> amountOfGeneralCloudiness = "BLĄD PRZY WCZYTYWANIU";
         }
 
