@@ -2,6 +2,7 @@ package pl.ciosmak;
 
 import pl.ciosmak.data.RemoteDataProvider;
 import pl.ciosmak.extractor.Extractor;
+import pl.ciosmak.sections.sectionOne.CurrentObservationTimeWhenActualObservationTimeDiffersMoreThanTenMinutesFromStandardGGTimeInSectionZero;
 import pl.ciosmak.sections.LoadDataFromFile;
 import pl.ciosmak.sections.Section;
 import pl.ciosmak.sections.sectionOne.*;
@@ -43,6 +44,7 @@ public class Main
             listOfSection.add(new Rainfall(extractor.getRainfall()));
             listOfSection.add(new PresentAndPastWeatherCondition(extractor.getPresentAndPastWeatherCondition(), stationType));
             listOfSection.add(new Clouds(extractor.getClouds()));
+            listOfSection.add(new CurrentObservationTimeWhenActualObservationTimeDiffersMoreThanTenMinutesFromStandardGGTimeInSectionZero(extractor.getCurrentObservationTimeWhenActualObservationTimeDiffersMoreThanTenMinutesFromStandardGGTimeInSectionZero()));
         }
 
         for (var element : listOfSection)
