@@ -13,91 +13,80 @@ public class PresentAndPastWeatherCondition extends Section
         if (!parametersExists)
             return;
 
-        presentWeatherOnly = (parameters.charAt(1) != '/');
         if (stationType.equals("stacja nieautomatyczna"))
         {
-            if (presentWeatherOnly)//nie auto terazniejsza
+            String tmpPresentWeather = parameters.substring(1, 3);
+            for (var array : tableOfPresentWeatherNonAutomatic)
             {
-                String tmpPresentWeather = parameters.substring(1, 3);
-                for (var array : tableOfPresentWeatherNonAutomatic)
+                if (array.get(0).equals(tmpPresentWeather))
                 {
-                    if (array.get(0).equals(tmpPresentWeather))
-                    {
-                        presentWeather = array.get(1);
-                        break;
-                    }
+                    presentWeather = array.get(1);
+                    break;
                 }
             }
-            else//nie auto ubiegła
+
+            String tmpPastWeather = parameters.substring(3, 5);
+            char tmpPartOfPastWeather;
+            pastWeather = "";
+            for (int i = 0; i < 2; ++i)
             {
-                String tmpPastWeather = parameters.substring(3, 5);
-                char tmpPartOfPastWeather;
-                pastWeather = "";
-                for (int i = 0; i < 2; ++i)
+                tmpPartOfPastWeather = tmpPastWeather.charAt(i);
+                switch (tmpPartOfPastWeather)
                 {
-                    tmpPartOfPastWeather = tmpPastWeather.charAt(i);
-                    switch (tmpPartOfPastWeather)
-                    {
-                        case '0' -> pastWeather = "chmury pokrywały połowę lub mniej niż połowę nieba w ciągu branego pod uwagę okresu";
-                        case '1' -> pastWeather = "chmury pokrywały ponad połowę nieba przez część okresu i mniej niż połowę przez pozostałą część okresu";
-                        case '2' -> pastWeather = "chmury pokrywały ponad połowę nieba w ciągu branego pod uwagę okresu";
-                        case '3' -> pastWeather = "wichura pyłowa, wichura piaskowa lub zamieć śnieżna wysoka";
-                        case '4' -> pastWeather = "mgła, mgła lodowa lub gęste zmętnienie (widzialność poniżej 1000 m)";
-                        case '5' -> pastWeather = "mżawka";
-                        case '6' -> pastWeather = "deszcz ciągły";
-                        case '7' -> pastWeather = "śnieg lub śnieg z deszczem lub ziarna lodowe";
-                        case '8' -> pastWeather = "opady przelotne";
-                        case '9' -> pastWeather = "burza z opadem lub bez opadu";
-                        case '/' -> pastWeather = "brak danych";
-                        default -> pastWeather = "BLĄD PRZY WCZYTYWANIU";
-                    }
-                    if (i == 0)
-                    {
-                        pastWeather += " oraz ";
-                    }
+                    case '0' -> pastWeather = pastWeather.concat("chmury pokrywały połowę lub mniej niż połowę nieba w ciągu branego pod uwagę okresu");
+                    case '1' -> pastWeather = pastWeather.concat("chmury pokrywały ponad połowę nieba przez część okresu i mniej niż połowę przez pozostałą część okresu");
+                    case '2' -> pastWeather = pastWeather.concat("chmury pokrywały ponad połowę nieba w ciągu branego pod uwagę okresu");
+                    case '3' -> pastWeather = pastWeather.concat("wichura pyłowa, wichura piaskowa lub zamieć śnieżna wysoka");
+                    case '4' -> pastWeather = pastWeather.concat("mgła, mgła lodowa lub gęste zmętnienie (widzialność poniżej 1000 m)");
+                    case '5' -> pastWeather = pastWeather.concat("mżawka");
+                    case '6' -> pastWeather = pastWeather.concat("deszcz ciągły");
+                    case '7' -> pastWeather = pastWeather.concat("śnieg lub śnieg z deszczem lub ziarna lodowe");
+                    case '8' -> pastWeather = pastWeather.concat("opady przelotne");
+                    case '9' -> pastWeather = pastWeather.concat("burza z opadem lub bez opadu");
+                    case '/' -> pastWeather = pastWeather.concat("brak danych");
+                    default -> pastWeather = "BLĄD PRZY WCZYTYWANIU";
+                }
+                if (i == 0)
+                {
+                    pastWeather = pastWeather.concat(" oraz ");
                 }
             }
         }
         else if (stationType.equals("stacja automatyczna"))
         {
-            if (presentWeatherOnly)//auto terazniszja
+            String tmpPresentWeather = parameters.substring(1, 3);
+            for (var array : tableOfPresentWeatherAutomatic)
             {
-                String tmpPresentWeather = parameters.substring(1, 3);
-                for (var array : tableOfPresentWeatherAutomatic)
+                if (array.get(0).equals(tmpPresentWeather))
                 {
-                    if (array.get(0).equals(tmpPresentWeather))
-                    {
-                        presentWeather = array.get(1);
-                        break;
-                    }
+                    presentWeather = array.get(1);
+                    break;
                 }
             }
-            else//auto ubiegła
+
+            String tmpPastWeather = parameters.substring(3, 5);
+            char tmpPartOfPastWeather;
+            pastWeather = "";
+            for (int i = 0; i < 2; ++i)
             {
-                String tmpPastWeather = parameters.substring(3, 5);
-                char tmpPartOfPastWeather;
-                pastWeather = "";
-                for (int i = 0; i < 2; ++i)
+                tmpPartOfPastWeather = tmpPastWeather.charAt(i);
+                switch (tmpPartOfPastWeather)
                 {
-                    tmpPartOfPastWeather = tmpPastWeather.charAt(i);
-                    switch (tmpPartOfPastWeather)
-                    {
-                        case '0' -> pastWeather = "bez istotnych zjawisk atmosferycznych";
-                        case '1' -> pastWeather = "OGRANICZONA WIDZIALNOŚĆ";
-                        case '2' -> pastWeather = "zamieć lub wichura piaskowa, ograniczona widzialność";
-                        case '3' -> pastWeather = "MGŁA";
-                        case '4' -> pastWeather = "OPAD";
-                        case '5' -> pastWeather = "mżawka";
-                        case '6' -> pastWeather = "deszcz";
-                        case '7' -> pastWeather = "śnieg lub krupa śnieżna albo lodowa";
-                        case '8' -> pastWeather = "opad przelotny lub opad z przerwami";
-                        case '9' -> pastWeather = "burza";
-                        default -> pastWeather = "BLĄD PRZY WCZYTYWANIU";
-                    }
-                    if (i == 0)
-                    {
-                        pastWeather += " oraz ";
-                    }
+                    case '0' -> pastWeather = pastWeather.concat("bez istotnych zjawisk atmosferycznych");
+                    case '1' -> pastWeather = pastWeather.concat("OGRANICZONA WIDZIALNOŚĆ");
+                    case '2' -> pastWeather = pastWeather.concat("zamieć lub wichura piaskowa, ograniczona widzialność");
+                    case '3' -> pastWeather = pastWeather.concat("MGŁA");
+                    case '4' -> pastWeather = pastWeather.concat("OPAD");
+                    case '5' -> pastWeather = pastWeather.concat("mżawka");
+                    case '6' -> pastWeather = pastWeather.concat("deszcz");
+                    case '7' -> pastWeather = pastWeather.concat("śnieg lub krupa śnieżna albo lodowa");
+                    case '8' -> pastWeather = pastWeather.concat("opad przelotny lub opad z przerwami");
+                    case '9' -> pastWeather = pastWeather.concat("burza");
+                    default -> pastWeather = "BLĄD PRZY WCZYTYWANIU";
+                }
+                if (i == 0)
+                {
+                    pastWeather = pastWeather.concat(" oraz ");
                 }
             }
         }
@@ -115,14 +104,8 @@ public class PresentAndPastWeatherCondition extends Section
         {
             return;
         }
-        if (presentWeatherOnly)
-        {
-            System.out.println("Pogoda bieżąca: " + presentWeather);
-        }
-        else
-        {
-            System.out.println("Pogoda ubiegla: " + pastWeather);
-        }
+        System.out.println("Pogoda bieżąca: " + presentWeather);
+        System.out.println("Pogoda ubiegla: " + pastWeather);
     }
 
     public static void loadTablesFromFile()
@@ -150,10 +133,8 @@ public class PresentAndPastWeatherCondition extends Section
         return presentWeather.length() != 0 || pastWeather.length() != 0;
     }
 
-    private boolean presentWeatherOnly;
     private String presentWeather;
     private String pastWeather;
     private static ArrayList<ArrayList<String>> tableOfPresentWeatherNonAutomatic;
     private static ArrayList<ArrayList<String>> tableOfPresentWeatherAutomatic;
-
 }
