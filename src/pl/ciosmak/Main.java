@@ -33,6 +33,7 @@ public class Main
             listOfSection.add(new StationTypeID(extractor.getStationTypeID()));
             listOfSection.add(new WindIndex(extractor.getTimeOfObservationAndWindIndex()));
             listOfSection.add(new PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility(extractor.getPrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility()));
+            String stationType = ((PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility) listOfSection.get(listOfSection.size() - 1)).getStationType();
             listOfSection.add(new AmountOfGeneralCloudCoverAndWindData(extractor.getAmountOfGeneralCloudCoverAndWindData()));
             listOfSection.add(new AirTemperature(extractor.getAirTemperature()));
             listOfSection.add(new DewPointTemperature(extractor.getDewPointTemperature()));
@@ -40,6 +41,7 @@ public class Main
             listOfSection.add(new AtmosphericPressureAtSeaLevel(extractor.getAtmosphericPressureAtSeaLevel()));
             listOfSection.add(new TendencyOfAtmosphericPressure(extractor.getTendencyOfAtmosphericPressure()));
             listOfSection.add(new Rainfall(extractor.getRainfall()));
+            listOfSection.add(new PresentAndPastWeatherCondition(extractor.getPresentAndPastWeatherCondition(), stationType));
         }
 
         for (var element : listOfSection)
