@@ -49,7 +49,7 @@ public class Extractor
             {
                 rainfall = tmpData;
             }
-            else if (tmpData.charAt(0) == '7')//TODO Uważać na to ze albo są dwie liczby i // albo // i dwie liczby
+            else if (tmpData.charAt(0) == '7')
             {
                 presentAndPastWeatherCondition = tmpData;
             }
