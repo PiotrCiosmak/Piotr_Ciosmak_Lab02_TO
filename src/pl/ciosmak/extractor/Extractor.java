@@ -43,7 +43,6 @@ public class Extractor
         boolean stayInTheWhileLoop = true;
         while (stayInTheWhileLoop)
         {
-            //TODO sprawdzac czy len nie jest == 0 jestli jest to wpisac brak pomiaru
             tmpData = extractFromDataLine(' ');
             if (tmpData.charAt(0) == '6')
             {
