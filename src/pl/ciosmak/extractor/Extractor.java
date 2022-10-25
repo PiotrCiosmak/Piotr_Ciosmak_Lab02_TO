@@ -168,7 +168,7 @@ public class Extractor
         rightSplitIndex = dataLine.indexOf(splitSign, leftSplitIndex);
         if (rightSplitIndex == -1)
         {
-            if (dataLine.charAt(leftSplitIndex) == '5')
+            if ((dataLine.charAt(leftSplitIndex) == '5') || (dataLine.charAt(leftSplitIndex) == '9'))
             {
                 return dataLine.substring(leftSplitIndex, leftSplitIndex + 5);
             }
