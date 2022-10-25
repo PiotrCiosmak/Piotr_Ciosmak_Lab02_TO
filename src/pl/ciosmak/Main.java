@@ -39,11 +39,12 @@ public class Main
             listOfSection.add(new AtmosphericPressureAtTheStationLevel(extractor.getAtmosphericPressureAtTheStationLevel()));
             listOfSection.add(new AtmosphericPressureAtSeaLevel(extractor.getAtmosphericPressureAtSeaLevel()));
             listOfSection.add(new TendencyOfAtmosphericPressure(extractor.getTendencyOfAtmosphericPressure()));
+            listOfSection.add(new Rainfall(extractor.getRainfall()));
         }
 
         for (var element : listOfSection)
         {
-            if(element.getClass().getSimpleName().equals("StationID"))
+            if (element.getClass().getSimpleName().equals("StationID"))
             {
                 System.out.println("\n---POMIAR---");
             }
