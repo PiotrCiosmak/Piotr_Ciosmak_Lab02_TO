@@ -59,7 +59,7 @@ public class Rainfall extends Section
     @Override
     public void show()
     {
-        if (sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation.length() == 0 && durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall.length() == 0)
+        if (!checkIfVariablesAreNotEmpty())
         {
             return;
         }
@@ -76,6 +76,11 @@ public class Rainfall extends Section
             return false;
         }
         return true;
+    }
+
+    private boolean checkIfVariablesAreNotEmpty()
+    {
+        return sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation.length() != 0 || durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall.length() != 0;
     }
 
     private String sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation;
