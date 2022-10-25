@@ -79,6 +79,11 @@ public class PrecipitationGroupIndexAndCloudBaseHeightAndHorizontalVisibility ex
         tableOfVisibilityInTheHorizontalDirection = FileDataProvider.readFromInputStream("files/visibilityInTheHorizontalDirection.txt");
     }
 
+    public String getStationType()
+    {
+        return stationType;
+    }
+
     private final String precipitationGroupIndex;
     private final String stationType;
     private final String relativeHeightOfTheBaseOfTheLowestClouds;
