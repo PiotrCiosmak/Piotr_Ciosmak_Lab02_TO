@@ -42,6 +42,7 @@ public class Main
             listOfSection.add(new TendencyOfAtmosphericPressure(extractor.getTendencyOfAtmosphericPressure()));
             listOfSection.add(new Rainfall(extractor.getRainfall()));
             listOfSection.add(new PresentAndPastWeatherCondition(extractor.getPresentAndPastWeatherCondition(), stationType));
+            listOfSection.add(new Clouds(extractor.getClouds()));
         }
 
         for (var element : listOfSection)
