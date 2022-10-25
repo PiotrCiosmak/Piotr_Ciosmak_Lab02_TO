@@ -42,7 +42,7 @@ public class Extractor
             tmpData = extractFromDataLine(' ');
             if (tmpData.charAt(0) == '6')
             {
-                totalPrecipitation = tmpData;
+                rainfall = tmpData;
             }
             else if (tmpData.charAt(0) == '7')//TODO Uważać na to ze albo są dwie liczby i // albo // i dwie liczby
             {
@@ -138,9 +138,9 @@ public class Extractor
         return tendencyOfAtmosphericPressure;
     }
 
-    public String getTotalPrecipitation()
+    public String getRainfall()
     {
-        return totalPrecipitation;
+        return rainfall;
     }
 
     public String getPresentAndPastWeatherCondition()
@@ -192,7 +192,7 @@ public class Extractor
     private String atmosphericPressureAtTheStationLevel;
     private String atmosphericPressureAtSeaLevel;
     private String tendencyOfAtmosphericPressure;
-    private String totalPrecipitation;
+    private String rainfall;
     private String presentAndPastWeatherCondition;
     private String clouds;
     private String currentObservationTimeWhenActualObservationTimeDiffersMoreThanTenMinutesFromStandardGGTimeInSectionZero;
