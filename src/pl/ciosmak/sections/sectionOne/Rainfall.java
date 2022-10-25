@@ -6,12 +6,10 @@ public class Rainfall extends Section
 {
     public Rainfall(final String parameters)
     {
-        if (parameters.length() == 0)
-        {
-            sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation = "";
-            durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall = "";
+        boolean parametersExists = checkIfParametersExists(parameters);
+        if (!parametersExists)
             return;
-        }
+
         int tmpSumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation = Integer.parseInt(parameters.substring(1, 4));
         switch (tmpSumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation)
         {
@@ -69,6 +67,17 @@ public class Rainfall extends Section
         System.out.println("Czas trwania okresu opadów kończącego się w terminie obserwacji, za który podaje się wysokośc opadów: " + durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall);
     }
 
-    private final String sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation;
-    private final String durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall;
+    private boolean checkIfParametersExists(final String parameters)
+    {
+        if (parameters.length() == 0)
+        {
+            sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation = "";
+            durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall = "";
+            return false;
+        }
+        return true;
+    }
+
+    private String sumOfPrecipitationInMmInThePeriodPrecedingTheTimeOfObservation;
+    private String durationOfTheRainfallPeriodEndingAatTheTimeOfObservationAsDefinedByTheAmountOfRainfall;
 }
